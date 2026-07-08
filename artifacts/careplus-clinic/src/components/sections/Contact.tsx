@@ -155,13 +155,14 @@ ${data.message}
             <div className="mt-10 rounded-2xl overflow-hidden shadow-lg border border-border h-[250px] relative">
               {/* Generic embedded map showing a location placeholder */}
  <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.6165540666964!2d77.56356415807511!3d13.069612499162302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae180850775e01%3A0x81d37cf96ad05e67!2s40%2C%20Vidyaranyapura%20-%20Thindlu%20Rd%2C%20Hanumanna%20Layout%2C%20Lakeshore%20Garden%2C%20Vidyaranyapura%2C%20Bengaluru%2C%20Karnataka%20560097!5e0!3m2!1sen!2sin!4v1783526466250!5m2!1sen!2sin"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d485.8086470834988!2d77.5644736!3d13.0694245!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19e84e67915d%3A0x5684146761eee8f!2sVignesvar%20Clinic%20-%20Dr.Santhi%20Annamalai!5e0!3m2!1sen!2sin!4v1783542974279!5m2!1sen!2sin"
   width="100%"
-  height="250"
+  height="450"
   style={{ border: 0 }}
   allowFullScreen
   loading="lazy"
   referrerPolicy="strict-origin-when-cross-origin"
+  className="rounded-2xl w-full"
 />
             </div>
           </motion.div>
