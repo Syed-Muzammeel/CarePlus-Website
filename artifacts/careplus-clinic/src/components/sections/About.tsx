@@ -2,11 +2,22 @@ import { motion } from "framer-motion";
 import { CheckCircle2, HeartPulse, ShieldCheck, UserCheck } from "lucide-react";
 
 const FEATURES = [
-  { icon: HeartPulse, title: "Patient-Centered Care", desc: "We listen, we understand, and we tailor treatments to your unique needs." },
-  { icon: UserCheck, title: "Expert Professionals", desc: "Led by highly qualified doctors with decades of clinical experience." },
-  { icon: ShieldCheck, title: "Modern Facility", desc: "Equipped with the latest technology in a clean, welcoming environment." },
+  {
+    icon: HeartPulse,
+    title: "Patient-Centered Care",
+    desc: "We provide compassionate, personalized healthcare for patients of all ages with a strong focus on prevention and wellness.",
+  },
+  {
+    icon: UserCheck,
+    title: "Experienced Medical Care",
+    desc: "Led by Dr. Shanthi S, offering trusted diagnosis, treatment, and follow-up care for individuals and families.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality & Safety",
+    desc: "A clean, comfortable, and patient-friendly clinic committed to delivering quality healthcare with modern medical practices.",
+  },
 ];
-
 export function About() {
   return (
     <section id="about" className="py-24 md:py-32 bg-background">
@@ -24,7 +35,7 @@ export function About() {
             </div>
             {/* Overlay stat card */}
             <div className="absolute -bottom-8 -right-4 md:-right-8 bg-card p-6 md:p-8 rounded-[1.5rem] shadow-xl border border-border/50 max-w-[240px]">
-              <div className="text-5xl font-bold text-primary mb-2">15+</div>
+              <div className="text-5xl font-bold text-primary mb-2">10+</div>
               <p className="text-sm text-muted-foreground font-medium leading-snug">Years of trusted community healthcare</p>
             </div>
           </motion.div>
@@ -40,9 +51,12 @@ export function About() {
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">About Vigneswar Clinic</span>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">A Neighborhood Clinic You Can Trust</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                At Dr. Shanthi S - Vigneswar Clinic, we believe healthcare should be accessible, comprehensive, and compassionate. 
-                Our mission is to provide proactive, patient-focused care that goes beyond just treating symptoms.
-              </p>
+  At Vigneswar Clinic, under the care of  Dr.Mrs.Shanthi Annamalai, MBBS, PGDHSC (Diabetology)S, we are committed to
+  providing compassionate, affordable, and high-quality healthcare for the
+  community. Our goal is to deliver accurate diagnosis, effective treatment,
+  and preventive care in a friendly and comfortable environment for every
+  patient.
+</p>
             </div>
 
             <div className="space-y-8 mt-6">
@@ -64,7 +78,13 @@ export function About() {
             <div className="mt-8 pt-8 border-t border-border">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary" />
-                <p className="font-semibold text-foreground text-lg">Led by Dr. Shanthi S, MD</p>
+                <p className="font-semibold text-foreground text-lg">
+  Led by Dr. Shanthi Annamalai, MBBS, PGDHSC (Diabetology)
+</p>
+
+<p className="text-muted-foreground mt-2">
+  Family Physician & Diabetologist
+</p>
               </div>
             </div>
           </motion.div>

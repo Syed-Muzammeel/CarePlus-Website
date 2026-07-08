@@ -101,7 +101,7 @@ export function Hero() {
             className="hidden lg:block relative"
           >
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[4/5] border border-border/50 bg-card">
-              <img src="/doctor.jpg" alt="Dr. Shanthi" className="object-cover w-full h-full" />
+              <img src="/doctor.jpg" alt="Dr.Mrs.Shanthi Annamalai" className="object-cover w-full h-full" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="bg-background/95 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-border">
@@ -110,9 +110,9 @@ export function Hero() {
                       DS
                     </div>
                     <div>
-                      <h4 className="font-bold text-foreground text-lg">Dr. Shanthi S</h4>
+                      <h4 className="font-bold text-foreground text-lg">Dr.Mrs.Shanthi Annamalai</h4>
                       <p className="text-primary text-sm font-medium">
-  General Physician
+  Family Physician & Diabetologist
 </p>
                     </div>
                   </div>
