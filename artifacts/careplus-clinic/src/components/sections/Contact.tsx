@@ -2,7 +2,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MapPin, Phone, Mail, Clock, Loader2, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -10,11 +10,14 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useCreateContactMessage } from "@workspace/api-client-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email is required"),
+  email: z
+  .string()
+  .email("Enter a valid email")
+  .optional()
+  .or(z.literal("")),
   phone: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
@@ -24,7 +27,7 @@ type FormValues = z.infer<typeof formSchema>;
 export function Contact() {
   const { toast } = useToast();
   const [isSuccess, setIsSuccess] = useState(false);
-  const createContactMessage = useCreateContactMessage();
+ 
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -36,28 +39,34 @@ export function Contact() {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    createContactMessage.mutate({
-      data
-    }, {
-      onSuccess: () => {
-        setIsSuccess(true);
-        form.reset();
-        toast({
-          title: "Message Sent",
-          description: "Thank you for reaching out. We will get back to you shortly.",
-        });
-        setTimeout(() => setIsSuccess(false), 5000);
-      },
-      onError: (error) => {
-        toast({
-          title: "Message Failed",
-          description: (error as any).error || (error as any).data?.error || "Something went wrong. Please try again.",
-          variant: "destructive",
-        });
-      }
-    });
-  };
+const onSubmit = (data: FormValues) => {
+  const message = `🏥 *New Enquiry - Vigneswar Clinic*
+
+👤 Name: ${data.name}
+
+📞 Phone: ${data.phone || "Not provided"}
+
+📧 Email: ${data.email || "Not provided"}
+
+📝 Message:
+${data.message}
+`;
+
+  const whatsappURL =
+    `https://wa.me/919945223334?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
+
+  setIsSuccess(true);
+  form.reset();
+
+  toast({
+    title: "Redirecting to WhatsApp",
+    description: "Please tap Send in WhatsApp to send your message.",
+  });
+
+  setTimeout(() => setIsSuccess(false), 5000);
+};
 
   return (
     <section id="contact" className="py-24 md:py-32 bg-background relative overflow-hidden">
@@ -242,18 +251,13 @@ export function Contact() {
                   )}
                 />
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full h-14 text-base rounded-xl"
-                  disabled={createContactMessage.isPending}
-                >
-                  {createContactMessage.isPending ? (
-                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Sending...</>
-                  ) : (
-                    "Send Message"
-                  )}
-                </Button>
+                <Button
+  type="submit"
+  size="lg"
+  className="w-full h-14 text-base rounded-xl"
+>
+  Send via WhatsApp
+</Button>
               </form>
             </Form>
             

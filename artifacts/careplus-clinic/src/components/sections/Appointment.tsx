@@ -19,7 +19,11 @@ import { cn } from "@/lib/utils";
 const formSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
   phone: z.string().min(10, "Valid phone number is required"),
-  email: z.string().email("Valid email is required"),
+  email: z
+  .string()
+  .email("Enter a valid email")
+  .optional()
+  .or(z.literal("")),
   service: z.string().min(1, "Please select a service"),
   preferredDate: z.date({
     required_error: "Please select a date",
