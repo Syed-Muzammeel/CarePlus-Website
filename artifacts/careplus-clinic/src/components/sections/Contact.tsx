@@ -82,7 +82,12 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground text-lg">Clinic Address</h4>
-                  <p className="text-muted-foreground mt-1">45, Vigneswar Complex, Jayanagar 4th Block<br/>Bengaluru 560041, Karnataka, India</p>
+                  <p className="text-muted-foreground mt-1">
+  40, Vidyaranyapura - Thindlu Rd<br />
+  Hanumanna Layout, Lakeshore Garden<br />
+  Vidyaranyapura, Bengaluru<br />
+  Karnataka - 560097
+</p>
                 </div>
               </div>
 
@@ -93,9 +98,9 @@ export function Contact() {
                 <div>
                   <h4 className="font-bold text-foreground text-lg">Contact Numbers</h4>
                   <p className="text-muted-foreground mt-1">
-                    Reception: +91 80 4567 8900<br/>
-                    Emergency: <span className="text-destructive font-medium">+91 98450 12345</span>
-                  </p>
+  Reception: +91 99452 23334<br />
+  Mobile: <span className="text-primary font-medium">+91 99452 23334</span>
+</p>
                 </div>
               </div>
 
@@ -115,11 +120,25 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground text-lg">Working Hours</h4>
-                  <p className="text-muted-foreground mt-1">
-                    Mon - Fri: 8:00 AM - 8:00 PM<br/>
-                    Sat: 9:00 AM - 5:00 PM<br/>
-                    Sun: Closed
-                  </p>
+                 <p className="text-muted-foreground mt-1">
+  Monday: 10:30 AM – 1:30 PM<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
+
+  Tuesday: 10:30 AM – 1:30 PM<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
+
+  Wednesday: 7:00 PM – 9:30 PM<br /><br />
+
+  Thursday: 7:00 PM – 9:30 PM<br /><br />
+
+  Friday: 10:30 AM – 1:30 PM<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
+
+  Saturday: 10:30 AM – 1:30 PM<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6:30 PM – 9:30 PM<br /><br />
+
+  Sunday: Closed
+</p>
                 </div>
               </div>
             </div>
@@ -152,7 +171,7 @@ export function Contact() {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h3>
                 <p className="text-muted-foreground">
-                  Thanks for contacting us. We've received your message and will reply via email shortly.
+                  Thank you for contacting Vigneswar Clinic. Our team will get back to you as soon as possible.
                 </p>
                 <Button className="mt-8" onClick={() => setIsSuccess(false)}>Send Another Message</Button>
               </div>
@@ -244,7 +263,7 @@ export function Contact() {
                 <p className="text-xs text-muted-foreground">Reach us on WhatsApp</p>
               </div>
               <Button variant="outline" className="border-green-500 text-green-600 hover:bg-green-50 dark:hover:bg-green-950/30 gap-2" asChild>
-                <a href="https://wa.me/919845012345" target="_blank" rel="noreferrer">
+                <a href="https://wa.me/919945223334" target="_blank" rel="noreferrer">
                   <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                   WhatsApp Chat
                 </a>

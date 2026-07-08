@@ -24,18 +24,20 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Accepting New Patients
+              Trusted Family Healthcare in Vidyaranyapura
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-              Your Health, <br/>
-              <span className="text-primary">Our Priority.</span>
-            </h1>
+           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+  Welcome to <br />
+  <span className="text-primary">Vigneswar Clinic</span>
+</h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed">
-              Experience compassionate, comprehensive healthcare in a welcoming environment. 
-              We blend modern medical expertise with personalized attention because you deserve to feel cared for, not just processed.
-            </p>
+           <p className="text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed">
+  Welcome to Vigneswar Clinic, providing compassionate and personalized healthcare
+  under the care of <strong>Dr. Shanthi S</strong>. We are committed to delivering
+  quality medical services for individuals and families in Vidyaranyapura,
+  Bengaluru.
+</p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
@@ -62,19 +64,31 @@ export function Hero() {
                 <Clock className="h-6 w-6 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-semibold text-foreground text-lg mb-1">Working Hours</h3>
-                  <p className="text-sm text-muted-foreground">Mon-Fri: 8:00 AM - 8:00 PM</p>
-                  <p className="text-sm text-muted-foreground">Sat: 9:00 AM - 5:00 PM</p>
-                  <p className="text-sm text-muted-foreground">Sun: Closed</p>
+ <p className="text-sm text-muted-foreground">Mon: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Tue: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Wed & Thu: 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Fri: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Sat: 10:30 AM – 1:30 PM | 6:30 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Sun: Closed</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <AlertCircle className="h-6 w-6 text-destructive mt-0.5" />
                 <div>
-                  <h3 className="font-semibold text-foreground text-lg mb-1">24/7 Emergency</h3>
-                  <a href="tel:+919845012345" className="text-lg font-bold text-destructive hover:underline block">
-                    +91 98450 12345
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-0.5">Immediate medical assistance</p>
+<h3 className="font-semibold text-foreground text-lg mb-1">
+  Contact Clinic
+</h3>
+
+<a
+  href="tel:+919945223334"
+  className="text-lg font-bold text-primary hover:underline block"
+>
+  +91 99452 23334
+</a>
+
+<p className="text-sm text-muted-foreground mt-0.5">
+  Call us to book your appointment.
+</p>
                 </div>
               </div>
             </div>
@@ -97,7 +111,9 @@ export function Hero() {
                     </div>
                     <div>
                       <h4 className="font-bold text-foreground text-lg">Dr. Shanthi S</h4>
-                      <p className="text-primary text-sm font-medium">Lead Physician</p>
+                      <p className="text-primary text-sm font-medium">
+  General Physician
+</p>
                     </div>
                   </div>
                 </div>
