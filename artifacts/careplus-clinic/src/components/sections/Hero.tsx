@@ -53,7 +53,7 @@ export function Hero() {
                 className="rounded-full text-base h-14 px-8 border-2 bg-background/50 backdrop-blur-sm"
                 asChild
               >
-                <a href="tel:+918045678900">
+                <a href="tel:+919945223334">
                   <Phone className="ml-0 mr-2 h-5 w-5" /> Call Now
                 </a>
               </Button>
