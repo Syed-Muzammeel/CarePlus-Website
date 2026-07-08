@@ -3,7 +3,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { format, isBefore, startOfToday } from "date-fns";
-import { CalendarIcon, Loader2, CheckCircle2 } from "lucide-react";
+import { CalendarIcon, CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { useToast } from "@/hooks/use-toast";
-import { useCreateAppointment } from "@workspace/api-client-react";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
@@ -35,24 +34,34 @@ type FormValues = z.infer<typeof formSchema>;
 
 const SERVICES = [
   "General Consultation",
-  "Child Care",
+  "Family Physician Consultation",
+  "Diabetes Management",
+  "Blood Pressure Management",
   "Women's Health",
-  "Diabetes Care",
-  "Blood Pressure Check",
+  "Child Healthcare",
+  "Preventive Health Check-up",
   "Vaccination",
-  "Health Checkups"
 ];
 
 const TIME_SLOTS = [
-  "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
-  "12:00", "12:30", "14:00", "14:30", "15:00", "15:30",
-  "16:00", "16:30", "17:00", "17:30"
+  "10:30 AM",
+  "11:00 AM",
+  "11:30 AM",
+  "12:00 PM",
+  "12:30 PM",
+  "1:00 PM",
+  "7:00 PM",
+  "7:30 PM",
+  "8:00 PM",
+  "8:30 PM",
+  "9:00 PM",
+  "9:30 PM",
 ];
 
 export function Appointment() {
   const { toast } = useToast();
   const [isSuccess, setIsSuccess] = useState(false);
-  const createAppointment = useCreateAppointment();
+  
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -65,37 +74,39 @@ export function Appointment() {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    createAppointment.mutate({
-      data: {
-        fullName: data.fullName,
-        phone: data.phone,
-        email: data.email,
-        service: data.service,
-        preferredDate: format(data.preferredDate, "yyyy-MM-dd"),
-        preferredTime: data.preferredTime,
-        message: data.message,
-      }
-    }, {
-      onSuccess: () => {
-        setIsSuccess(true);
-        form.reset();
-        toast({
-          title: "Appointment Requested",
-          description: "We have received your request and will confirm shortly.",
-        });
-        setTimeout(() => setIsSuccess(false), 5000);
-      },
-      onError: (error) => {
-        toast({
-          title: "Booking Failed",
-          description: (error as any).error || (error as any).data?.error || "Something went wrong. Please try again or call us.",
-          variant: "destructive",
-        });
-      }
-    });
-  };
+const onSubmit = (data: FormValues) => {
+  const message = `🏥 *New Appointment Request*
 
+👤 Name: ${data.fullName}
+
+📞 Phone: ${data.phone}
+
+📧 Email: ${data.email}
+
+🩺 Service: ${data.service}
+
+📅 Preferred Date: ${format(data.preferredDate, "dd MMM yyyy")}
+
+🕒 Preferred Time: ${data.preferredTime}
+
+📝 Message:
+${data.message || "No additional message"}
+`;
+
+  const whatsappURL = `https://wa.me/919945223334?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, "_blank");
+
+  setIsSuccess(true);
+  form.reset();
+
+  toast({
+    title: "Redirecting to WhatsApp",
+    description: "Please tap Send in WhatsApp to complete your appointment request.",
+  });
+
+  setTimeout(() => setIsSuccess(false), 5000);
+};
   return (
     <section id="appointment" className="py-24 md:py-32 bg-accent/20 relative">
       <div className="container mx-auto px-4 md:px-6">
@@ -108,16 +119,24 @@ export function Appointment() {
             className="lg:col-span-2"
           >
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Book Online</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Schedule Your Visit</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Book Your Appointment</h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              Booking an appointment is quick and easy. Choose your preferred service, date, and time, and our team will get back to you with a confirmation.
+              Schedule your consultation with Dr. (Mrs.) Shanthi Annamalai. Select your preferred date, time, and service, and our clinic will contact you to confirm your appointment.
             </p>
             <div className="bg-card p-6 rounded-2xl border border-border shadow-sm space-y-4">
-              <h3 className="font-bold text-foreground text-lg">Need immediate help?</h3>
-              <p className="text-muted-foreground text-sm">For emergencies, do not use this form. Please call our emergency line or visit the nearest hospital.</p>
-              <Button variant="destructive" className="w-full" asChild>
-                <a href="tel:+919845012345">Call Emergency: +91 98450 12345</a>
-              </Button>
+              <h3 className="font-bold text-foreground text-lg">
+  Need Assistance?
+</h3>
+
+<p className="text-muted-foreground text-sm">
+  For appointment inquiries or immediate assistance, please call our clinic during consultation hours.
+</p>
+
+<Button variant="default" className="w-full" asChild>
+  <a href="tel:+919945223334">
+    📞 Call Clinic: +91 99452 23334
+  </a>
+</Button>
             </div>
           </motion.div>
 
@@ -151,7 +170,7 @@ export function Appointment() {
                       <FormItem>
                         <FormLabel>Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John Doe" {...field} />
+                          <Input placeholder="Enter your full name" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -164,7 +183,7 @@ export function Appointment() {
                       <FormItem>
                         <FormLabel>Phone Number</FormLabel>
                         <FormControl>
-                          <Input placeholder="+91 98450 00000" {...field} />
+                          <Input placeholder="Enter your mobile number" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -180,7 +199,7 @@ export function Appointment() {
                       <FormItem>
                         <FormLabel>Email Address</FormLabel>
                         <FormControl>
-                          <Input type="email" placeholder="john@example.com" {...field} />
+                          <Input type="email" placeholder="Enter your email (optional)" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -292,18 +311,13 @@ export function Appointment() {
                   )}
                 />
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full h-14 text-base rounded-xl"
-                  disabled={createAppointment.isPending}
-                >
-                  {createAppointment.isPending ? (
-                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting Request...</>
-                  ) : (
-                    "Submit Appointment Request"
-                  )}
-                </Button>
+                <Button
+  type="submit"
+  size="lg"
+  className="w-full h-14 text-base rounded-xl"
+>
+  Book via WhatsApp
+</Button>
               </form>
             </Form>
           </motion.div>

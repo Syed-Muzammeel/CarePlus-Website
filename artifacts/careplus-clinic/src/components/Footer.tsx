@@ -10,14 +10,39 @@ export function Footer() {
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 text-primary hover:opacity-90 transition-opacity mb-6">
               <HeartPulse className="h-8 w-8 shrink-0" />
-              <span className="flex flex-col leading-tight">
-                <span className="text-xl font-bold tracking-tight text-background">Dr. Shanthi S</span>
-                <span className="text-sm font-medium text-background/70">ಡಾ.ಶಾಂತಿ ಎಸ್ - ವಿಗ್ನೇಶ್ವರ ಕ್ಲಿನಿಕ್</span>
-              </span>
+<span className="flex flex-col leading-tight">
+  <span className="text-xl font-bold tracking-tight text-background">
+    Vigneswar Clinic
+  </span>
+
+  <span className="text-sm text-background/80">
+    ವಿಗ್ನೇಶ್ವರ ಕ್ಲಿನಿಕ್
+  </span>
+
+  <span className="text-xs text-background/60">
+    Dr. Shanthi Annamalai • ಡಾ. ಶಾಂತಿ ಅಣ್ಣಾಮಲೈ
+  </span>
+
+  <span className="text-xs text-background/60">
+    Family Physician & Diabetologist • ಕುಟುಂಬ ವೈದ್ಯರು ಮತ್ತು ಮಧುಮೇಹ ತಜ್ಞರು
+  </span>
+</span>
             </a>
-            <p className="text-background/70 text-sm leading-relaxed mb-6">
-              Your trusted neighborhood medical clinic. We blend modern medical expertise with personalized attention because you deserve to feel cared for, not just processed.
-            </p>
+<p className="text-gray-400 leading-relaxed mt-4">
+  Vigneswar Clinic is committed to providing compassionate,
+  affordable, and high-quality healthcare for individuals and
+  families in Vidyaranyapura, Bengaluru. Our focus is on
+  personalized medical care, preventive healthcare, and
+  long-term wellness.
+</p>
+<a
+  href="https://wa.me/919945223334"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center mt-6 px-5 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition"
+>
+  WhatsApp Us
+</a>
             <div className="flex gap-4">
               <a href="#" className="h-10 w-10 rounded-full bg-background/10 flex items-center justify-center text-background hover:bg-primary hover:text-primary-foreground transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -58,15 +83,36 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <svg className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span className="text-background/70 text-sm">45, Vigneswar Complex, Jayanagar 4th Block<br/>Bengaluru 560041, Karnataka, India</span>
+                <a
+  href="https://maps.google.com/?q=40,+Vidyaranyapura+-+Thindlu+Rd,+Hanumanna+Layout,+Lakeshore+Garden,+Vidyaranyapura,+Bengaluru,+Karnataka+560097"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-background/70 text-sm hover:text-primary transition-colors"
+>
+  40, Vidyaranyapura - Thindlu Rd<br/>
+  Hanumanna Layout<br/>
+  Lakeshore Garden<br/>
+  Vidyaranyapura<br/>
+  Bengaluru - 560097
+</a>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="h-5 w-5 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <span className="text-background/70 text-sm">+91 80 4567 8900</span>
+                <a
+  href="tel:+919945223334"
+  className="text-background/70 text-sm hover:text-primary transition-colors"
+>
+  +91 99452 23334
+</a>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="h-5 w-5 text-primary flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                <span className="text-background/70 text-sm">contact@vigneswarclinic.com</span>
+                <a
+  href="mailto:vigneswarclinic@gmail.com"
+  className="text-background/70 text-sm hover:text-primary transition-colors"
+>
+  vigneswarclinic@gmail.com
+</a>
               </li>
             </ul>
           </div>
@@ -74,12 +120,11 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-background/50 text-sm text-center md:text-left">
-            &copy; {currentYear} Dr. Shanthi S - Vigneswar Clinic. All rights reserved.
+            &copy; {currentYear} Vigneswar Clinic. All Rights Reserved.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-background/50 hover:text-background text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-background/50 hover:text-background text-sm transition-colors">Terms of Service</a>
-          </div>
+<div className="text-background/50 text-sm">
+  Serving Vidyaranyapura & Nearby Areas
+</div>
         </div>
       </div>
     </footer>

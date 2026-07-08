@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 
 const REVIEWS = [
   {
-    name: "Emily Thompson",
+    name: "Kalyanamma",
     role: "Patient for 3 years",
     content: "The care I receive at Vigneswar Clinic is exceptional. Dr. Shanthi takes the time to listen and never makes me feel rushed. The entire staff is friendly, and the clinic is always impeccably clean.",
     rating: 5
   },
   {
-    name: "Michael Rodriguez",
+    name: "Jayamma",
     role: "Recent Patient",
     content: "I visited for a general checkup and was blown away by the efficiency and warmth of the team. Booking was easy, wait time was minimal, and the consultation was very thorough. Highly recommended.",
     rating: 5
   },
   {
-    name: "Sarah Jenkins",
+    name: "Kavita",
     role: "Mother of two",
     content: "Finding a good clinic for children is tough, but Vigneswar Clinic has been wonderful. The pediatrician is so gentle with my kids, and the environment is very welcoming. I trust them completely with my family's health.",
     rating: 5

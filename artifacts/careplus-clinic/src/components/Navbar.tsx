@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import { Button } from '@/components/ui/button';
-import { HeartPulse, Menu, X } from 'lucide-react';
+import { HeartPulse, Menu, X, Phone, CalendarDays } from "lucide-react";
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NAV_LINKS = [
@@ -49,10 +49,19 @@ export function Navbar() {
           className="flex items-center gap-3 text-primary hover:opacity-90 transition-opacity"
         >
           <HeartPulse className="h-8 w-8 shrink-0" />
-          <span className="flex flex-col leading-tight">
-            <span className="text-lg md:text-xl font-bold tracking-tight text-foreground">Dr. Shanthi S</span>
-            <span className="text-xs md:text-sm font-medium text-foreground/60">ಡಾ.ಶಾಂತಿ ಎಸ್ - ವಿಗ್ನೇಶ್ವರ ಕ್ಲಿನಿಕ್</span>
-          </span>
+ <span className="flex flex-col leading-tight">
+  <span className="text-lg md:text-xl font-bold tracking-tight text-foreground">
+    Vigneswar Clinic
+  </span>
+
+  <span className="text-xs md:text-sm text-foreground/70">
+    ವಿಗ್ನೇಶ್ವರ ಕ್ಲಿನಿಕ್
+  </span>
+
+  <span className="text-[11px] md:text-xs text-foreground/60">
+    Dr. Shanthi Annamalai • Family Physician & Diabetologist
+  </span>
+</span>
         </a>
 
         {/* Desktop Nav */}
@@ -69,25 +78,35 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <ThemeToggle />
-          <Button onClick={() => scrollToSection('#appointment')} className="rounded-full font-medium">
-            Book Appointment
-          </Button>
-        </div>
+<div className="hidden md:flex items-center gap-4">
+  <Button
+    variant="outline"
+    onClick={() => window.location.href = "tel:+919945223334"}
+    className="rounded-full font-medium"
+  >
+    <Phone className="mr-2 h-4 w-4" />
+    Call Now
+  </Button>
+
+  <Button
+    onClick={() => scrollToSection('#appointment')}
+    className="rounded-full font-medium"
+  >
+    <CalendarDays className="mr-2 h-4 w-4" />
+    Book Appointment
+  </Button>
+</div>
 
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-2">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-      </div>
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  >
+    {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+  </Button>
+</div>
 
       {/* Mobile Menu */}
       <AnimatePresence>

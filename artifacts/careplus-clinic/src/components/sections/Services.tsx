@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 const SERVICES = [
   {
     id: "general",
-    title: "General Consultation",
+    title: "General & Family Consultation",
     icon: Stethoscope,
     desc: "Comprehensive checkups and treatment for common illnesses.",
     fullDesc: "Our general consultations cover a wide range of common medical conditions. We focus on accurate diagnosis, personalized treatment plans, and continuous monitoring to ensure your swift recovery and long-term well-being."
@@ -35,7 +35,7 @@ const SERVICES = [
   },
   {
     id: "bp",
-    title: "Blood Pressure",
+    title: "Hypertension Management(Blood-Pressure)",
     icon: Droplets,
     desc: "Regular screening and management of hypertension.",
     fullDesc: "Hypertension is a silent killer. We provide routine blood pressure checks, lifestyle interventions, and medical management to keep your cardiovascular health in check."
@@ -64,9 +64,9 @@ export function Services() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Our Services</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Comprehensive Healthcare Solutions</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Comprehensive Family Healthcare</h2>
           <p className="text-muted-foreground text-lg">
-            We offer a wide range of medical services to keep you and your family healthy at every stage of life.
+            Vigneswar Clinic provides compassionate, affordable, and personalized healthcare services for patients of all ages, with special expertise in family medicine and diabetes care.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export function Services() {
               setSelectedService(null);
               document.querySelector('#appointment')?.scrollIntoView({ behavior: 'smooth' });
             }}>
-              Book this service
+              Book Appointment
             </Button>
           </div>
         </DialogContent>
