@@ -10,6 +10,10 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: appointments
+    description: Appointment booking operations
+  - name: contact
+    description: Contact form operations
 paths:
   /healthz:
     get:
@@ -24,6 +28,56 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /appointments:
+    post:
+      operationId: createAppointment
+      tags: [appointments]
+      summary: Book an appointment
+      description: Creates a new appointment booking request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AppointmentInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Appointment"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /contact-messages:
+    post:
+      operationId: createContactMessage
+      tags: [contact]
+      summary: Submit a contact form message
+      description: Creates a new contact message from a visitor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ContactMessageInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ContactMessage"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +87,112 @@ components:
           type: string
       required:
         - status
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
+    Appointment:
+      type: object
+      properties:
+        id:
+          type: integer
+        fullName:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        service:
+          type: string
+        preferredDate:
+          type: string
+        preferredTime:
+          type: string
+        message:
+          type: ["string", "null"]
+        createdAt:
+          type: string
+      required:
+        - id
+        - fullName
+        - phone
+        - email
+        - service
+        - preferredDate
+        - preferredTime
+        - createdAt
+    AppointmentInput:
+      type: object
+      properties:
+        fullName:
+          type: string
+          minLength: 1
+        phone:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+        service:
+          type: string
+          minLength: 1
+        preferredDate:
+          type: string
+          pattern: "^\\d{4}-\\d{2}-\\d{2}$"
+          description: "Date in YYYY-MM-DD format, must not be in the past"
+        preferredTime:
+          type: string
+          pattern: "^([01]\\d|2[0-3]):[0-5]\\d$"
+          description: "Time in HH:mm format"
+        message:
+          type: string
+      required:
+        - fullName
+        - phone
+        - email
+        - service
+        - preferredDate
+        - preferredTime
+    ContactMessage:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: ["string", "null"]
+        message:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - email
+        - message
+        - createdAt
+    ContactMessageInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          pattern: "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$"
+        phone:
+          type: string
+        message:
+          type: string
+          minLength: 1
+      required:
+        - name
+        - email
+        - message
 

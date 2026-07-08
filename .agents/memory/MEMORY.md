@@ -1,0 +1,1 @@
+- [OpenAPI email format + orval/zod codegen](openapi-orval-zod-email-format.md) — `format: email` in openapi.yaml breaks codegen with this workspace's zod/orval versions; use a regex `pattern` instead.

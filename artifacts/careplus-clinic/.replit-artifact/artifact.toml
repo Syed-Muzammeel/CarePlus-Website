@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "CarePlus Medical Clinic"
+version = "1.0.0"
+id = "artifacts/careplus-clinic"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18835
+
+[services.development]
+run = "pnpm --filter @workspace/careplus-clinic run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/careplus-clinic", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/careplus-clinic/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18835"
+BASE_PATH = "/"
