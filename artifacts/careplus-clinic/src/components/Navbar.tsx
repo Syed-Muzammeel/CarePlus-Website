@@ -96,7 +96,7 @@ export function Navbar() {
     Book Appointment
   </Button>
 </div>
-
+</div>
         {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-2">
   <Button
