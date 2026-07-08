@@ -51,7 +51,7 @@ export function About() {
               <span className="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">About Vigneswar Clinic</span>
               <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">A Neighborhood Clinic You Can Trust</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
-  At Vigneswar Clinic, under the care of  Dr.Mrs.Shanthi Annamalai, MBBS, PGDHSC (Diabetology)S, we are committed to
+  At Vigneswar Clinic, under the care of  Dr.(Mrs).Shanthi Annamalai, MBBS, PGDHSC (Diabetology), we are committed to
   providing compassionate, affordable, and high-quality healthcare for the
   community. Our goal is to deliver accurate diagnosis, effective treatment,
   and preventive care in a friendly and comfortable environment for every
@@ -79,7 +79,7 @@ export function About() {
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="h-6 w-6 text-primary" />
                 <p className="font-semibold text-foreground text-lg">
-  Led by Dr. Shanthi Annamalai, MBBS, PGDHSC (Diabetology)
+  Led by Dr.(Mrs). Shanthi Annamalai, MBBS, PGDHSC (Diabetology)
 </p>
 
 <p className="text-muted-foreground mt-2">

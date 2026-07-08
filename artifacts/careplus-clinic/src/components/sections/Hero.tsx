@@ -34,7 +34,7 @@ export function Hero() {
             
            <p className="text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed">
   Welcome to Vigneswar Clinic, providing compassionate and personalized healthcare
-  under the care of <strong>Dr. Shanthi S</strong>. We are committed to delivering
+  under the care of <strong>Dr.(Mrs). Shanthi Annamalai </strong>. We are committed to delivering
   quality medical services for individuals and families in Vidyaranyapura,
   Bengaluru.
 </p>
