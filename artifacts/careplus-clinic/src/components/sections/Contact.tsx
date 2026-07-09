@@ -53,7 +53,7 @@ ${data.message}
 `;
 
   const whatsappURL =
-    `https://wa.me/919945223334?text=${encodeURIComponent(message)}`;
+    `https://wa.me/919380676549?text=${encodeURIComponent(message)}`;
 
   window.open(whatsappURL, "_blank");
 
@@ -108,7 +108,7 @@ ${data.message}
                   <h4 className="font-bold text-foreground text-lg">Contact Numbers</h4>
                   <p className="text-muted-foreground mt-1">
   Reception: +91 99452 23334<br />
-  Mobile: <span className="text-primary font-medium">+91 99452 23334</span>
+  Mobile: <span className="text-primary font-medium">+91 93806 76549</span>
 </p>
                 </div>
               </div>
@@ -128,26 +128,13 @@ ${data.message}
                   <Clock className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground text-lg">Working Hours</h4>
-                 <p className="text-muted-foreground mt-1">
-  Monday: 10:30 AM – 1:30 PM<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
-
-  Tuesday: 10:30 AM – 1:30 PM<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
-
-  Wednesday: 7:00 PM – 9:30 PM<br /><br />
-
-  Thursday: 7:00 PM – 9:30 PM<br /><br />
-
-  Friday: 10:30 AM – 1:30 PM<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 PM – 9:30 PM<br /><br />
-
-  Saturday: 10:30 AM – 1:30 PM<br />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6:30 PM – 9:30 PM<br /><br />
-
-  Sunday: Closed
-</p>
+                  <h3 className="font-semibold text-foreground text-lg mb-1">Working Hours</h3>
+ <p className="text-sm text-muted-foreground">Mon: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Tue: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Wed & Thu: 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Fri: 10:30 AM – 1:30 PM | 7:00 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Sat: 10:30 AM – 1:30 PM | 6:30 PM – 9:30 PM</p>
+<p className="text-sm text-muted-foreground">Sun: Closed</p>
                 </div>
               </div>
             </div>

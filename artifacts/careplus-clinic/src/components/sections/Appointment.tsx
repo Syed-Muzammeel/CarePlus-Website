@@ -97,7 +97,7 @@ const onSubmit = (data: FormValues) => {
 ${data.message || "No additional message"}
 `;
 
-  const whatsappURL = `https://wa.me/919945223334?text=${encodeURIComponent(message)}`;
+  const whatsappURL = `https://wa.me/919380676549?text=${encodeURIComponent(message)}`;
 
   window.open(whatsappURL, "_blank");
 
@@ -137,8 +137,8 @@ ${data.message || "No additional message"}
 </p>
 
 <Button variant="default" className="w-full" asChild>
-  <a href="tel:+919945223334">
-    📞 Call Clinic: +91 99452 23334
+  <a href="tel:+919380676549">
+    📞 Call Clinic: +91 93806 76549
   </a>
 </Button>
             </div>

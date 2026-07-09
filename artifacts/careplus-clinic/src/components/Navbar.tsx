@@ -81,7 +81,7 @@ export function Navbar() {
 <div className="hidden md:flex items-center gap-4">
   <Button
     variant="outline"
-    onClick={() => window.location.href = "tel:+919945223334"}
+    onClick={() => window.location.href = "tel:+919380676549"}
     className="rounded-full font-medium"
   >
     <Phone className="mr-2 h-4 w-4" />
