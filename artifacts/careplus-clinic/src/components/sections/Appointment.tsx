@@ -79,7 +79,7 @@ export function Appointment() {
   });
 
 const onSubmit = (data: FormValues) => {
-const message = `🚀 *TEST APPOINTMENT MESSAGE*
+const message = `🚀 *NEW APPOINTMENT MESSAGE*
 
 👤 Name: ${data.fullName}
 
